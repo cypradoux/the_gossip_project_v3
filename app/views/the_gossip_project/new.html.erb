@@ -1,0 +1,49 @@
+<head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="http://localhost:3000/the_gossip_project">TGP</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="http://localhost:3000/the_gossip_project">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= team_path %>" >Team</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" href="http://localhost:3000/contact">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</head>
+
+<body>
+<h1>TheGossipProject</h1>
+<h2>Créer ton gossip en direct !</h2>
+
+<div class="formulaire">
+<%= form_for Gossip.new, url: the_gossip_project_index_path do %>
+  <%= label_tag :title, 'Titre' %>
+    <%= text_field_tag :title %>
+    <br /> <br />
+
+    <%= label_tag :content, 'Contenu' %>
+    <%= text_area_tag :content %>
+    <br /> <br />
+
+    <%= label_tag :user, 'Utilisateur' %>
+    <%= text_field_tag :user %>
+    <br /> <br />
+
+    <%= submit_tag "Créer Gossip" %>
+
+<% end %>
+
+
+</div>
+
+</body>
