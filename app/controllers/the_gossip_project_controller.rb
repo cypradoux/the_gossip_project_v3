@@ -20,8 +20,8 @@ class TheGossipProjectController < ApplicationController
   def create
     @gossips = Gossip.new(title: params[:title],
                           content: params[:content])
-    @gossips.user = User.find_by(first_name: params[:user])
-    
+    @gossips.user = User.find_by(id: session[:user_id])
+
       if @gossips.save
         flash[:success] = "Gossip saved successfully"
         redirect_to the_gossip_project_index_path

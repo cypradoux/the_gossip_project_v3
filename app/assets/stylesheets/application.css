@@ -85,12 +85,12 @@ a.return-link2:hover{
 
 div.formulaire{
     text-align: center;
-    padding-top: 50px;
     border: 2px solid #ACEBA7;
     border-radius: 20px;
-    padding: 50px;
+    padding: 20px;
     margin-right: 400px;
     margin-left: 400px;
+    margin-bottom: 30px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -120,7 +120,12 @@ button{
     margin-left: 1000px;
 }
 
-li.nav-item-sign{
+div.dropdown {
     margin-left: 700px;
 
+}
+
+div.deco{
+     text-decoration: none;
+     margin-left: 10px;
 }

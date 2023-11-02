@@ -12,12 +12,16 @@
 
 <p>Voici tous les gossips qui ont été écrit :</p>
 
-<% @gossips.each_with_index do |i, index|%>
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <h5 class="card-title"><%= "#{i.user.first_name}"%>
-        <h6 class="card-subtitle mb-2 text-muted"><%="#{i.title}" %></h6>
-        <%= link_to "Voir le gossip", the_gossip_project_path(id: index +1), class:"mon-style-css" %>
-    </div>
-  </div>
-<% end %> <!-- pour chaque itération, on appelle le first_name du user correspondant au titre de son gossip -->
+<div class="row">
+  <% @gossips.each_with_index do |i, index|%>
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body ">
+            <h5 class="card-title"><%= "#{i.user.first_name}"%>
+            <h6 class="card-subtitle mb-2 text-muted"><%="#{i.title}" %></h6>
+            <%= link_to "Voir le gossip", the_gossip_project_path(id: index +1), class:"mon-style-css" %>
+        </div>
+      </div>
+    </div> 
+  <% end %> <!-- pour chaque itération, on appelle le first_name du user correspondant au titre de son gossip -->
+</div>  

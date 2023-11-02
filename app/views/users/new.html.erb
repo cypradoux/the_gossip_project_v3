@@ -4,35 +4,43 @@
 
 <body>
 <h1>TheGossipProject</h1>
-<h2>Tu as déjà un compte ? Connecte toi !</h2>
-<div class="formulaire">
-<%= form_for User.new, url: sessions_path do %>
-  <%= label_tag :email, 'Email' %>
-    <%= text_field_tag :email %>
-    <br /> <br />
-
-    <%= label_tag :password, 'Mot de passe' %>
-    <%= text_field_tag :password %>
-    <br /> <br />
-
-    <%= submit_tag "Se connecter" %>
-
-<% end %>
-</div>
 
 <h2>Si tu n'as pas encore de compte, créer ton profil utilisateur dès maintenant !</h2>
 
 <div class="formulaire">
-<%= form_for User.new, url: sessions_path do %>
+<%= form_for User.new, url: users_path do %>
+  <%= label_tag :first_name, 'Prénom' %>
+  <br /> <br />
+    <%= text_field_tag :first_name %>
+    <br /> <br />
+    
+  <%= label_tag :last_name, 'Nom de famille' %>
+  <br /> <br />
+    <%= text_field_tag :last_name %>
+    <br /> <br />
+
+  <%= label_tag :age, 'Age' %>
+  <br /> <br />
+    <%= text_field_tag :age %>
+    <br /> <br />
+
+  <%= label_tag :description, 'Description' %>
+  <br /> <br />
+    <%= text_area_tag :description %>
+    <br /> <br />
+
   <%= label_tag :email, 'Email' %>
+  <br /> <br />
     <%= text_field_tag :email %>
     <br /> <br />
 
     <%= label_tag :password, 'Mot de passe' %>
+    <br /> <br />
     <%= text_field_tag :password %>
     <br /> <br />
 
     <%= label_tag :password_confirmation, 'Confirmation' %>
+    <br /> <br />
     <%= text_field_tag :password_confirmation %>
     <br /> <br />
 
@@ -40,17 +48,11 @@
 
 <% end %>
 
-<% if @users.errors.any? %>
-  <div class="alert alert-danger">
-    <h4>Erreur(s) lors de la création du compte :</h4>
-    <ul>
-      <% @users.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
+    <a class="nav-link" href="http://localhost:3000/sessions/new" id="navbarDropdown" role="button">
+      Déjà un compte ? Se connecter
+    </a>
 </div>
+
+
 
 </body>
