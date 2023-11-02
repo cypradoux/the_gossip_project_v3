@@ -19,7 +19,7 @@ class UsersController < ApplicationController
                         city_id: 127)
     
       if @users.save
-        @user.authenticate(params[:password])
+        @users.authenticate(params[:password])
         flash[:success] = "Bien joué, ton compte a bien été créé!"
         redirect_to the_gossip_project_index_path
       else

@@ -8,8 +8,8 @@
 
 <h2>Tu as déjà un compte ? Connecte toi !</h2>
 <div class="formulaire">
-<%= form_for User.new, url: sessions_path do %>
-  <%= label_tag :email, 'Email' %>
+  <%= form_for User.new, url: sessions_path do %>
+    <%= label_tag :email, 'Email' %>
     <%= text_field_tag :email %>
     <br /> <br />
 
@@ -18,12 +18,10 @@
     <br /> <br />
 
     <%= submit_tag "Se connecter" %>
-
-<% end %>
-
-    <a class="nav-link" href="http://localhost:3000/users/new" id="navbarDropdown" role="button">
-      Pas encore de compte ? S'inscrire
-    </a>
+  <% end %>
+  <a class="nav-link" href="http://localhost:3000/users/new" id="navbarDropdown" role="button">
+    Pas encore de compte ? S'inscrire
+  </a>
 </div>
 
 </body>

@@ -1,0 +1,35 @@
+<head>
+
+</head>
+
+
+  <h1>TheGossipProject</h1>
+
+<div class="button">
+  <a href="http://localhost:3000/the_gossip_project/new">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Créer un Gossip! +</button>
+  </a>
+</div> 
+
+<h2>Tu veux modifier ce gossip ?</h2>
+<div class="formulaire">
+  <%= form_for @gossip, url: the_gossip_project_path(@gossip), method: :patch do |f| %>
+    <%= f.label_tag :title, 'Titre' %>
+    <%= f.text_field_tag :titre %>
+    <br /> <br />
+
+    <%= f.label_tag :content, 'Contenu' %>
+    <%= f.text_field_tag :content %>
+    <br /> <br />
+
+    <%= f.submit_tag "Modifier" %>
+  <% end %>
+</div>  
+
+<div class="link">
+  <a class="return-link" href="http://localhost:3000/the_gossip_project">Revenir à la page d'accueil</a>
+</div>
+  </br>
+<div class="link2">
+  <%= link_to "En savoir plus sur l'auteur", user_path, class:"return-link2" %>
+</div>
