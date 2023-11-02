@@ -16,33 +16,111 @@
 
 h1{
     text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-bottom: 20px;
 }
 
 h2{
     text-align: center;
     padding-bottom: 20px;
+    padding-top: 20px;
 }
 
+h3{
+    text-align: center;
+    padding-bottom: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 p{
     padding-left:20px ;
     font-size: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 li{
     padding-left: 30px;
 }
 
-a{
-    padding-left: 20px;
+a.return-link{
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #ACEBA7;
+    border: 2px solid #ACEBA7;
+    border-radius: 10px;
+    margin-left :500px;
+}
+
+div.link{
+    padding: 20px;
+}
+
+div.link2{
+    padding-bottom: 40px;
+}
+
+a.return-link2{
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #8fcfe9;
+    border: 2px solid #8fcfe9;
+    border-radius: 10px;
+    margin-left :520px;
+}
+
+a.return-link:hover{
+    color: white;
+    border: 2px solid #ACEBA7;
+    background-color:#ACEBA7 ;
+}
+
+a.return-link2:hover{
+    color: white;
+    border: 2px solid #8fcfe9;
+    background-color:#8fcfe9 ;
 }
 
 div.formulaire{
     text-align: center;
     padding-top: 50px;
-    border: 2px solid skyblue;
+    border: 2px solid #ACEBA7;
     border-radius: 20px;
     padding: 50px;
-    margin-right: 500px;
-    margin-left: 500px;
+    margin-right: 400px;
+    margin-left: 400px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+div.card{
+    margin-left: 30px;
+    text-align: center;
+    box-shadow: black;
+    display: flex;
+}
+
+div.card :hover{
+    background-color:#ACEBA7;
+}
+
+.mon-style-css{
+    text-decoration: none;
+    color: white;
+    font-style: italic;
+}
+
+a.navbar-brand{
+    margin-left: 30px;
+}
+
+button{
+    display: flex;
+    margin-left: 1000px;
+}
+
+li.nav-item-sign{
+    margin-left: 700px;
+
 }

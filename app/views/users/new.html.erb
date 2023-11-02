@@ -1,0 +1,56 @@
+<head>
+
+</head>
+
+<body>
+<h1>TheGossipProject</h1>
+<h2>Tu as déjà un compte ? Connecte toi !</h2>
+<div class="formulaire">
+<%= form_for User.new, url: sessions_path do %>
+  <%= label_tag :email, 'Email' %>
+    <%= text_field_tag :email %>
+    <br /> <br />
+
+    <%= label_tag :password, 'Mot de passe' %>
+    <%= text_field_tag :password %>
+    <br /> <br />
+
+    <%= submit_tag "Se connecter" %>
+
+<% end %>
+</div>
+
+<h2>Si tu n'as pas encore de compte, créer ton profil utilisateur dès maintenant !</h2>
+
+<div class="formulaire">
+<%= form_for User.new, url: sessions_path do %>
+  <%= label_tag :email, 'Email' %>
+    <%= text_field_tag :email %>
+    <br /> <br />
+
+    <%= label_tag :password, 'Mot de passe' %>
+    <%= text_field_tag :password %>
+    <br /> <br />
+
+    <%= label_tag :password_confirmation, 'Confirmation' %>
+    <%= text_field_tag :password_confirmation %>
+    <br /> <br />
+
+    <%= submit_tag "S'inscrire" %>
+
+<% end %>
+
+<% if @users.errors.any? %>
+  <div class="alert alert-danger">
+    <h4>Erreur(s) lors de la création du compte :</h4>
+    <ul>
+      <% @users.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+</div>
+
+</body>

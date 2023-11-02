@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   resources :the_gossip_project
+  resources :users
+  resources :city
+  resources :sessions, only:[:new, :create, :destroy]
 
   # get 'the_gossip_project/home'
 

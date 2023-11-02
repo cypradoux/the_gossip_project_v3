@@ -1,26 +1,8 @@
 <head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="http://localhost:3000/the_gossip_project">TGP</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="http://localhost:3000/the_gossip_project">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="http://localhost:3000/team">Team</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link" href="http://localhost:3000/contact">Contact</a>
-      </li>
-    </ul>
-    <a href="http://localhost:3000/the_gossip_project/new">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Créer un Gossip!</button>
-    </a>
-  </div>
+  <a href="http://localhost:3000/the_gossip_project/new">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Créer un Gossip!</button>
+  </a>
 </nav>
 </head>
 
@@ -29,7 +11,13 @@
 <h2>Bienvenue à toi cher gossipeur !</h2>
 
 <p>Voici tous les gossips qui ont été écrit :</p>
-<% @gossips.each do |i|%>
-    <li><%= "de #{i.user.first_name} : #{i.title}" %></li>
-  </p>
+
+<% @gossips.each_with_index do |i, index|%>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title"><%= "#{i.user.first_name}"%>
+        <h6 class="card-subtitle mb-2 text-muted"><%="#{i.title}" %></h6>
+        <%= link_to "Voir le gossip", the_gossip_project_path(id: index +1), class:"mon-style-css" %>
+    </div>
+  </div>
 <% end %> <!-- pour chaque itération, on appelle le first_name du user correspondant au titre de son gossip -->

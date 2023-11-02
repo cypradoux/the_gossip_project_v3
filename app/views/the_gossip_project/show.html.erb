@@ -1,0 +1,27 @@
+<head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a href="http://localhost:3000/the_gossip_project/new">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Créer un Gossip!</button>
+  </a>
+</nav>  
+</head>
+
+
+  <h1>TheGossipProject</h1>
+  <p> --> Auteur : <p> 
+  <p> <%= @element.user.first_name %> </p>
+  <p> --> Titre : <p>
+  <p> <%= @element.title %> </p>
+  <p> --> Contenu :</p>
+  <p> <%= @element.content %> </p>
+  <p> --> Ville de l'auteur :</p>
+  <p> <%= @element.user.city.name %> </p>
+  <%= link_to "En savoir plus sur la ville", city_path %>
+
+<div class="link">
+  <a class="return-link" href="http://localhost:3000/the_gossip_project">Revenir à la page d'accueil</a>
+</div>
+  </br>
+<div class="link2">
+  <%= link_to "En savoir plus sur l'auteur", user_path, class:"return-link2" %>
+</div>
