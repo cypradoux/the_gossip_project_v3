@@ -115,17 +115,12 @@ a.navbar-brand{
     margin-left: 30px;
 }
 
-button{
-    display: flex;
-    margin-left: 1000px;
-}
-
 div.dropdown {
     margin-left: 700px;
 
 }
 
-div.deco{
-     text-decoration: none;
-     margin-left: 10px;
+div.button{
+    margin-left: 550px;
+    padding-bottom: 20px;
 }

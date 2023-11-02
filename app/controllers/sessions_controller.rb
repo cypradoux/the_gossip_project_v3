@@ -1,13 +1,14 @@
 class SessionsController < ApplicationController
+    include SessionsHelper
     def new
 
     end
 
     def create
-        user = User.find_by(email: params[:email])
+        @user = User.find_by(email: params[:email])
         
-      if user && user.authenticate(params[:password])
-        session[:user_id] = user.id
+      if @user && @user.authenticate(params[:password])
+        session[:user_id] = @user.id
         flash[:success] = "Bienvenue, tu es maintenant connecté à ta session"
         redirect_to the_gossip_project_index_path
       else
@@ -18,9 +19,6 @@ class SessionsController < ApplicationController
 
     def destroy
         session.delete(:user_id)
-        render 'the_gossip_project'
-        puts "$" * 60
-        puts "tu es bien déco"
-        puts "$" * 60
+        redirect_to root_path
     end
 end

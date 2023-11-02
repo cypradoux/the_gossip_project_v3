@@ -1,18 +1,11 @@
 class TheGossipProjectController < ApplicationController
-  #méthodes du projet validant de lundi 30/10
+
   def team
   end
 
   def contact
   end
 
-  # def welcome
-  #   puts "$" * 60
-  #   puts @first_name = params[:first_name]
-  #   puts "$" * 60
-  # end
-
-  #méthode du mardi 31/10
   def index
     @gossips = Gossip.all
   end
