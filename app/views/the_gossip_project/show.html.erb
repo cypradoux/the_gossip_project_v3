@@ -6,9 +6,7 @@
   <h1>TheGossipProject</h1>
 
 <div class="button">
-  <a href="http://localhost:3000/the_gossip_project/new">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Créer un Gossip! +</button>
-  </a>
+  <%= link_to "Créer un Gossip! +", new_the_gossip_project_path, :class=>"btn btn-outline-success my-2 my-sm-0" %>
 </div> 
 
   <p> --> Auteur : <p> 
@@ -22,7 +20,7 @@
   <%= link_to "En savoir plus sur la ville", city_path %>
 
 <div class="link">
-  <a class="return-link" href="http://localhost:3000/the_gossip_project">Revenir à la page d'accueil</a>
+  <%= link_to "Revenir à la page d'accueil", the_gossip_project_index_path, :class=>"return-link" %>
 </div>
   </br>
 <div class="link2">

@@ -116,11 +116,19 @@ a.navbar-brand{
 }
 
 div.dropdown {
-    margin-left: 700px;
-
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
 }
 
 div.button{
     margin-left: 550px;
     padding-bottom: 20px;
+    
+}
+
+div.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

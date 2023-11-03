@@ -25,7 +25,7 @@ class TheGossipProjectController < ApplicationController
   end
 
   def edit
-    @gossip = Gossip.find(params[:id])
+    # @gossip = Gossip.find(params[:id])
   end
 
   def show
@@ -36,13 +36,20 @@ class TheGossipProjectController < ApplicationController
 
   def update
     @model = Model.find(params[:id])
-    if @model.update()
+    if @model.update(params[:id])
       redirect_to @model
       flash[:success] = "Bien joué, tu as bien modifié le gossip !"
     else
       render :edit
     end
   end
+
+# def update
+#     gossip_params = params.require(:gossip).permit(:title, :content)
+#     @gossip = Gossip.find_by(id: params[:id])
+#     @gossip.update(gossip_params)
+
+#   end
 
   def destroy
   end

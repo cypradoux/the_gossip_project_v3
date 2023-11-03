@@ -8,32 +8,30 @@
 
 <% if current_user %>
   <div class="button">
-    <a href="http://localhost:3000/the_gossip_project/new">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Créer un Gossip! +</button>
-    </a>
+    <%= link_to "Créer un Gossip! +", new_the_gossip_project_path, :class=>"btn btn-outline-success my-2 my-sm-0" %>
   </div>
 <% else %>
   <div class="button">
-    <a href="http://localhost:3000/users/new">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Créer un Gossip! +</button>
-    </a>
+    <%= link_to "Créer un Gossip! +", new_the_gossip_project_path, :class=>"btn btn-outline-success my-2 my-sm-0" %>
   </div>
 <% end %>
 
 
 <p>Voici tous les gossips qui ont été écrit :</p>
 
-<div class="row">
-  <% @gossips.each_with_index do |i, index|%>
-    <div class="col-md-4">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body ">
-            <h5 class="card-title"><%= "#{i.user.first_name}"%>
-            <h6 class="card-subtitle mb-2 text-muted"><%="#{i.title}" %></h6>
-            <%= link_to "Voir le gossip", the_gossip_project_path(id: index +1), class:"mon-style-css" %>
-            <%= link_to "Modifier le gossip", edit_the_gossip_project_path(id: index +1), class:"mon-style-css" %>
+<div class="container">
+  <div class="row">
+    <% @gossips.each_with_index do |i, index|%>
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body ">
+              <h5 class="card-title"><%= "#{i.user.first_name}"%>
+              <h6 class="card-subtitle mb-2 text-muted"><%="#{i.title}" %></h6>
+              <%= link_to "Voir le gossip", the_gossip_project_path(id: index +1), class:"mon-style-css" %>
+              <%= link_to "Modifier le gossip", edit_the_gossip_project_path(id: index +1), class:"mon-style-css" %>
+          </div>
         </div>
-      </div>
-    </div> 
-  <% end %> <!-- pour chaque itération, on appelle le first_name du user correspondant au titre de son gossip -->
-</div>  
+      </div> 
+    <% end %> <!-- pour chaque itération, on appelle le first_name du user correspondant au titre de son gossip -->
+  </div>  
+</div>

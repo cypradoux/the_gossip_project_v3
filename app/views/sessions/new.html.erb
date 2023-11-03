@@ -19,9 +19,9 @@
 
     <%= submit_tag "Se connecter" %>
   <% end %>
-  <a class="nav-link" href="http://localhost:3000/users/new" id="navbarDropdown" role="button">
-    Pas encore de compte ? S'inscrire
-  </a>
+
+  <%= link_to "Pas encore de compte ? S'inscrire", new_user_path, :class=>"nav-link" %>
+
 </div>
 
 </body>
